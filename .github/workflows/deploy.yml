@@ -24,8 +24,8 @@ jobs:
       uses: anantaramdas/ipfs-pinata-deploy-action@v1.6.4
       with:
         pin-name: 'syphon.org'
-        path: './*'
+        path: './'
         pinata-api-key: ${{ secrets.PINATA_KEY }}
         pinata-secret-api-key: ${{ secrets.PINATA_SECRET }}
         verbose: true
-        remove-old: false
+        remove-old: true
