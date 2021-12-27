@@ -18,14 +18,13 @@ jobs:
         node-version: '16'
         cache: 'npm'
     - run: npm ci
-    - run: npm run build
-    - run: ls -als
+    - run: npm run build:prod
 
     - name: Upload to IPFS
       uses: anantaramdas/ipfs-pinata-deploy-action@v1.6.4
       with:
         pin-name: 'syphon.org'
-        path: './public'
+        path: './build'
         pinata-api-key: ${{ secrets.PINATA_KEY }}
         pinata-secret-api-key: ${{ secrets.PINATA_SECRET }}
         verbose: true
